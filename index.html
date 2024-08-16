@@ -58,7 +58,7 @@
     </style>
 </head>
 <body>
-    <h1>Hello, welcome to my website</h1>
+    <h1 id="greeting">Hello, welcome to my website</h1>
     <p>Aram Vardanyan</p>
     
     <div class="container">
@@ -67,8 +67,13 @@
     </div>
 
     <script>
-        document.querySelector("#myBtn").addEventListener("click", function() {
-            alert('Button clicked!');
+        document.querySelector("#myBtn").addEventListener("click", () => {
+            const userName = prompt("What is your name?");
+            if (userName) {
+                document.querySelector("#greeting").textContent = "Hello " + userName + ", welcome to my website!";
+            } else {
+                document.querySelector("#greeting").textContent = "Hello guest, welcome to my website!";
+            }
         });
     </script>
 </body>
